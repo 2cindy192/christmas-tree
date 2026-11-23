@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #0a0308;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+canvas {
+    display: block;
+    touch-action: none;
+}
+
+.noscript {
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    color: #d8c3ff;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 18px;
+    text-align: center;
+    padding: 24px;
+}
+
+/* ---------- 圣诞信弹窗 ---------- */
+#letter-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(8, 2, 14, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+#letter-overlay[hidden] {
+    display: none;
+}
+
+#letter-overlay.open {
+    opacity: 1;
+}
+
+.letter-card {
+    position: relative;
+    width: min(540px, 90vw);
+    max-height: 84vh;
+    overflow-y: auto;
+    background: linear-gradient(160deg, #201238, #150a24);
+    border: 1px solid rgba(201, 166, 255, 0.45);
+    border-radius: 20px;
+    padding: 40px 34px 36px;
+    color: #efe7ff;
+    box-shadow: 0 12px 60px rgba(150, 100, 255, 0.35);
+    transform: translateY(16px) scale(0.96);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+#letter-overlay.open .letter-card {
+    transform: none;
+    opacity: 1;
+}
+
+#letter-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(201, 166, 255, 0.5);
+    border-radius: 50%;
+    background: rgba(201, 166, 255, 0.08);
+    color: #e8dcff;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#letter-close:hover {
+    background: rgba(201, 166, 255, 0.25);
+}
+
+.letter-heart {
+    text-align: center;
+    font-size: 44px;
+}
+
+.letter-title {
+    text-align: center;
+    margin: 10px 0 18px;
+    font-family: "Brush Script MT", "Segoe Script", "Snell Roundhand", cursive;
+    font-size: 34px;
+    color: #d9c2ff;
+}
+
+.letter-body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 16px;
+    line-height: 2;
+}
+
+.letter-body p {
+    margin: 0 0 14px;
+}
+
+.letter-sign {
+    text-align: right;
+    color: #c9a6ff;
+}
+
+@media (max-width: 600px) {
+    .letter-card {
+        padding: 32px 22px 28px;
+    }
+
+    .letter-body {
+        font-size: 15px;
+    }
+}
