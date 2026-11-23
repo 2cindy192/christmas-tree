@@ -14,6 +14,8 @@
 </head>
 <body>
     <canvas id="c" aria-label="圣诞树粒子动画"></canvas>
+    <audio id="bgm" loop preload="auto" src="audio/bgm.mp3"></audio>
+    <button id="music-toggle" type="button" aria-label="音乐开关" hidden>🎵</button>
     <noscript>
         <p class="noscript">需要启用 JavaScript 才能看到圣诞树动画 🎄</p>
     </noscript>
@@ -37,6 +39,14 @@
                     <p class="letter-sign">一个坚持了九年的废物老鼠</p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- 环绕小星星点开的图片 -->
+    <div id="photo-overlay" hidden>
+        <div class="photo-card" role="dialog" aria-modal="true">
+            <button id="photo-close" type="button" aria-label="关闭">✕</button>
+            <img id="photo-img" src="" alt="星星里的图片">
         </div>
     </div>
 

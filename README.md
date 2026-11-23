@@ -7,7 +7,11 @@
 ```
 christmas-tree-site/
 ├── index.html      # 页面入口（含 SEO / Open Graph / 移动端适配）
-├── favicon.svg     # 网站图标（粉色星星）
+├── favicon.svg     # 网站图标（浅紫色星星）
+├── audio/
+│   └── bgm.mp3     # 背景音乐（点开信时自动播放）
+├── gifts/
+│   └── star1~5.png # 绕树旋转的 5 颗小星星（点击查看图片）
 ├── css/
 │   └── style.css   # 页面基础样式
 └── js/
@@ -48,7 +52,9 @@ npx serve .
 | 树的颜色 / 粒子数量 | `js/main.js` 顶部 `PALETTE` 和 `buildScene()` 里的 `total`（默认 7200） |
 | 星星颜色 / 粒子数 | `js/main.js` 顶部 `STAR_PALETTE` 和 `buildStar()` 里的 `count`（默认 560） |
 | 祝福文字 | `js/main.js` 中 `drawGreeting()` 的 `fillText('Merry Christmas', ...)` |
-| 圣诞信内容 | `index.html` 里 `.letter-body` 的段落（点击树上发光的信封挂饰打开） |
+| 圣诞信内容 | `index.html` 里 `.letter-body` 的段落（信藏在树顶的星星里，点击星星打开） |
+| 开场文字 / 节奏 | `js/main.js` 顶部 `OPEN_TEXT` 及 `OPEN_T0`、`OPEN_CHAR`、`INTRO_DELAY` |
+| 背景音乐 | `audio/bgm.mp3`（点开信时自动播放，右上角 🎵 按钮可暂停/恢复） |
 | 页面标题 / 描述 | `index.html` 的 `<title>` 与 `<meta>` |
 | 旋转速度 / 呼吸节奏 | `js/main.js` 中 `render()` 的 `angle` 与 `drawTree()` 的 `breathe` |
 
